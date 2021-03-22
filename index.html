@@ -1,0 +1,57 @@
+<!-- Author: Ali Elzein -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Ali Elzein">
+    <meta name="keywords" content="">
+    <title>Move Mate | Booking </title>
+    <link rel = "stylesheet" href = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link rel="shortcut icon" type="images/png" href="./images/logo.png">
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="./app.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body ng-app = "booking" ng-controller="AppCtrl">
+    <header>
+        <img width=155px src="./images/logo.png" alt="logo" />
+    </header>
+    <div id="form">
+        <h2 class="headers">Booking Form</h2>
+        <form name="bookingForm" novalidate>
+            <md-input-container>
+                <label>Number of hours</label>
+                <input id="nbHours" ng-model="nbHours" type=number required name="nbHours" ng-min="0" 
+                    step="1" onKeyDown="return false" onchange="clearPriceText()">
+                <div ng-messages="bookingForm.nbHours.$error">
+                    <div ng-message="min">The number of hours cannot be below 0.</div>
+                </div>
+            </md-input-container><br>
+            <md-input-container>
+                <label>Time</label>
+                <md-select id="time" ng-model="time" onfocus="clearPriceText()">
+                    <md-option ng-repeat="hour in hours" ng-value="hour">{{hour}}</md-option>
+                </md-select>
+            </md-input-container>
+            <md-datepicker id="date" md-placeholder="Date" ng-model="date" name="date" required onclick="clearPriceText()"></md-datepicker>
+            <br>
+            <md-button type="submit" class="md-raised"  ng-disabled="!nbHours" onclick="calculatePrice()">Calculate price!</md-button>
+            <p id="price"></p>
+        </form>
+    </div>    
+    <footer>
+        <div class="logoFooter ">
+            <img width=150px src="./images/logo.png " alt="logo ">
+        </div>
+    </footer>
+    <script src="./app.js"></script>
+</body>
+
+</html>

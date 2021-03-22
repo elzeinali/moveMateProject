@@ -1,0 +1,77 @@
+/* Author: Ali Elzein */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
+    padding: 0;
+    margin: 0;
+}
+
+
+/*Header*/
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 40px;
+    background-color: black;
+    top: 0;
+    z-index: 200;
+    position: sticky !important;
+}
+
+/*Booking Form*/
+
+.headers{
+    color: #54d1db;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+#form{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    border: 2px solid #54d1db;
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.md-datepicker-button {
+    display: none;
+}
+
+.md-datepicker-triangle-button, .md-icon-button, .md-button{
+    margin-top: 5px !important;
+}
+.md-datepicker-input{
+    font-size: 16px;
+    color: black !important;
+    opacity: 1 !important;
+    margin-top: 6px;
+    padding: 0;
+}
+
+::placeholder {
+    color: black;
+    opacity: 0.3;
+}
+
+/*Footer*/
+
+footer {
+    padding: 0px;
+    margin-top: 0px;
+    background-color: black;
+    align-items: center;
+}
+
+footer .logoFooter {
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+}
