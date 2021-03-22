@@ -46,9 +46,8 @@ function calculatePrice(){
     const numberHours = document.getElementById('nbHours').value;
     const date = document.getElementsByClassName('md-datepicker-input')[0].value;
     const time = document.getElementsByClassName('md-select-value')[0].innerText;
-    console.log(time);
     if(date != ''){
-        if(time != 'Time'){
+        if((time.includes(':'))){
             if(isWeekend(date)){
                 const priceValueWeekend = parseInt(numberHours) * 150;
                 price.innerText = 'The price is '+priceValueWeekend+'$';
